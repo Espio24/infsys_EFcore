@@ -1,0 +1,4 @@
+D:\EFcore\Example\ApplicationContext\bin\Debug\netcoreapp3.1\ApplicationContext.exe
+D:\EFcore\Example\ApplicationContext\obj\Debug\netcoreapp3.1\ApplicationContext.csprojAssemblyReference.cache
+D:\EFcore\Example\ApplicationContext\obj\Debug\netcoreapp3.1\ApplicationContext.AssemblyInfoInputs.cache
+D:\EFcore\Example\ApplicationContext\obj\Debug\netcoreapp3.1\ApplicationContext.AssemblyInfo.cs
