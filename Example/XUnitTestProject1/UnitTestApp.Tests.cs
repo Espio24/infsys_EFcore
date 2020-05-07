@@ -42,7 +42,7 @@ namespace UnitTestApp.Tests
                 .Options;
 
 
-            Assert.Equal(0,Example.Program.DeleteTester(options, 12));
+            Assert.Equal(0,Example.Program.DeleteTesterById(options, 12));
         }
 
         [Fact]
@@ -78,7 +78,7 @@ namespace UnitTestApp.Tests
                 .Options;
 
 
-            Assert.Equal(0, Example.Program.UpdateTester(options, 1, "UpdateTester"));
+            Assert.Equal(0, Example.Program.UpdateTesterById(options, 1, "UpdateTester"));
         }
     }
 }

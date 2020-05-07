@@ -25,9 +25,9 @@ namespace Example
 
 
             Connection();
-            //UpdateTester(options, 1, "newName");
+            //UpdateTesterById(options, 1, "newName");
             //InsertTester(options, "NewTester");
-            //DeleteTester(options, 18);
+            //DeleteTesterById(options, 18);
             
 
             Console.Read();
@@ -35,7 +35,7 @@ namespace Example
 
 
 
-        public static int DeleteTester(DbContextOptions<ApplicationContext> options, int id)
+        public static int DeleteTesterById(DbContextOptions<ApplicationContext> options, int id)
         {
             using (ApplicationContext db = new ApplicationContext(options))
             {
@@ -67,7 +67,7 @@ namespace Example
             return 0;
         }
 
-        public static int UpdateTester(DbContextOptions<ApplicationContext> options, int id, string NewName)
+        public static int UpdateTesterById(DbContextOptions<ApplicationContext> options, int id, string NewName)
         {
             
             using (ApplicationContext db = new ApplicationContext(options))
