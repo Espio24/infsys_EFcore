@@ -25,9 +25,10 @@ namespace Example
 
 
             Connection();
-            //UpdateTesterById(options, 1, "newName");
-            //InsertTester(options, "NewTester");
-            //DeleteTesterById(options, 18);
+            //UpdateTester(options, 1, "newName");
+            //InsertTester(options, "NewTester", "test.jpg");
+            //DeleteTester(options, 18);
+            //UpdateFile(options, 1, "test.jpg");
             
 
             Console.Read();
@@ -35,7 +36,7 @@ namespace Example
 
 
 
-        public static int DeleteTesterById(DbContextOptions<ApplicationContext> options, int id)
+        public static int DeleteTester(DbContextOptions<ApplicationContext> options, int id)
         {
             using (ApplicationContext db = new ApplicationContext(options))
             {
@@ -54,11 +55,11 @@ namespace Example
             return 0;
         }
 
-        public static int InsertTester(DbContextOptions<ApplicationContext> options, string Name)
+        public static int InsertTester(DbContextOptions<ApplicationContext> options, string Name, string filename)
         {
             using (ApplicationContext db = new ApplicationContext(options))
             {
-                Tester tester = new Tester { name_tester = Name };
+                Tester tester = new Tester { name_tester = Name, Avatar = filename };
                 db.Tester.Add(tester);
                 db.SaveChanges();
                 Console.WriteLine("Пользователь добавлен");
@@ -67,7 +68,7 @@ namespace Example
             return 0;
         }
 
-        public static int UpdateTesterById(DbContextOptions<ApplicationContext> options, int id, string NewName)
+        public static int UpdateTester(DbContextOptions<ApplicationContext> options, int id, string NewName)
         {
             
             using (ApplicationContext db = new ApplicationContext(options))
@@ -86,9 +87,31 @@ namespace Example
                 }
             }
             return 0;
-
-
         }
+
+        public static int UpdateFile (DbContextOptions<ApplicationContext> options, int id, string filename)
+        {
+
+            using (ApplicationContext db = new ApplicationContext(options))
+            {
+                Tester tester = db.Tester.Find(id);
+                if (tester != null)
+                {
+
+                    tester.Avatar = filename;
+                    db.SaveChanges();
+                    Console.WriteLine("Картинка изменена");
+                    
+
+                }
+                else
+                {
+                    Console.WriteLine("Пользователя с таким id не существует");
+                }
+            }
+            return 0;
+        }
+
 
 
         //Подключение к БД

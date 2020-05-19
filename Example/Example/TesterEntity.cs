@@ -9,4 +9,6 @@ public class Tester
     public int id_tester { get; set; }
     
     public string name_tester { get; set; }
+
+    public string Avatar { get; set; }
 }
